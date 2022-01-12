@@ -13,6 +13,64 @@ function creaDom(ilMioArray,contenitore){
 
 };
 
+function cambio(){
+    document.getElementById("tipologia").addEventListener("change",function(){
+        let tipo = this.value;
+    
+        if (tipo == "all") {
+            contenitore.innerHTML = "";
+            creaDom(mioArray,contenitore);
+        } else {
+            switch(tipo){
+                case "animal": 
+                    let arrayAnimali = mioArray.filter((elemento) => {
+                        if(elemento.type == "animal"){
+                            return true
+                        } else{
+                            return false;
+                        }
+                    } );
+                    console.log(arrayAnimali);
+                    contenitore.innerHTML = "";
+                    creaDom(arrayAnimali,contenitore);
+                    break;
+                
+                case "vegetable" :
+                    let arrayVegetali = mioArray.filter((elemento) => {
+                        if(elemento.type == "vegetable"){
+                            return true
+                        } else{
+                            return false;
+                        }
+                    } );
+                    console.log(arrayVegetali);
+                    contenitore.innerHTML = "";
+                    creaDom(arrayVegetali,contenitore);
+                    break;
+    
+                case "user" :
+                    let arrayUser = mioArray.filter((elemento) => {
+                        if(elemento.type == "user"){
+                            return true
+                        } else{
+                            return false;
+                        }
+                    } );
+                    console.log(arrayUser);
+                    contenitore.innerHTML = "";
+                    creaDom(arrayUser,contenitore);
+                    break;
+    
+            }
+    
+    
+    
+    
+        }
+    
+    });
+}
+
 let mioArray = [
 	{
 		name: 'cat',
@@ -131,60 +189,6 @@ let mioArray = [
 let contenitore = document.getElementById("contenitore");
 
 creaDom(mioArray,contenitore);
+cambio();
 
-document.getElementById("tipologia").addEventListener("change",function(){
-    let tipo = this.value;
-
-    if (tipo == "all") {
-        contenitore.innerHTML = "";
-        creaDom(mioArray,contenitore);
-    } else {
-        switch(tipo){
-            case "animal": 
-                let arrayAnimali = mioArray.filter((elemento) => {
-                    if(elemento.type == "animal"){
-                        return true
-                    } else{
-                        return false;
-                    }
-                } );
-                console.log(arrayAnimali);
-                contenitore.innerHTML = "";
-                creaDom(arrayAnimali,contenitore);
-                break;
-            
-            case "vegetable" :
-                let arrayVegetali = mioArray.filter((elemento) => {
-                    if(elemento.type == "vegetable"){
-                        return true
-                    } else{
-                        return false;
-                    }
-                } );
-                console.log(arrayVegetali);
-                contenitore.innerHTML = "";
-                creaDom(arrayVegetali,contenitore);
-                break;
-
-            case "user" :
-                let arrayUser = mioArray.filter((elemento) => {
-                    if(elemento.type == "user"){
-                        return true
-                    } else{
-                        return false;
-                    }
-                } );
-                console.log(arrayUser);
-                contenitore.innerHTML = "";
-                creaDom(arrayUser,contenitore);
-                break;
-
-        }
-
-
-
-
-    }
-
-});
 
