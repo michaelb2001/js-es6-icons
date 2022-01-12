@@ -1,3 +1,18 @@
+
+function creaDom(ilMioArray,contenitore){
+    for (let i = 0; i < ilMioArray.length; i++) {
+        contenitore.innerHTML+=` 
+        <div class="icona d-flex flex-column justify-content-center align-items-center col-2 m-3">
+           <i class="${ilMioArray[i].family} ${ilMioArray[i].prefix}${ilMioArray[i].name} ${ilMioArray[i].type}" 
+              style="color:${ilMioArray[i].color}"></i>
+            <div>
+                ${ilMioArray[i].name}
+            </div>
+        </div>`;
+    }
+
+};
+
 let mioArray = [
 	{
 		name: 'cat',
@@ -112,3 +127,18 @@ let mioArray = [
 		color: 'blue'
 	}
 ];
+
+let contenitore = document.getElementById("contenitore");
+
+creaDom(mioArray,contenitore);
+
+document.getElementById("tipologia").addEventListener("change",function(){
+    let tipo = this.value;
+    switch(tipo){
+        case "all" :
+            
+            contenitore.innerHTML = "";
+            creaDom(mioArray,contenitore);
+    }
+});
+

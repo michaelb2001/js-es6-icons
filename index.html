@@ -14,15 +14,45 @@
     <title>fontIcon</title>
   </head>
   <body>
-    <header>
+    <header class="w-100">
+        <div class="header-top w-100">
+            <div class="container-fluid p-2">
+                <div class="row align-items-center">
+                    <h2 class="text-primary">FontIcon</h2>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom w-100 ">
+            <div class="container-fluid">
+                <div class="row justify-content-center align-items-center bg-primary p-3">
+                    <div class="col-5 d-flex justify-content-center">
+                        <label for="tipologia" class="text-white">FILTRA PER TIPO</label>
 
+                        <select name="tipologia" id="tipologia" class="mx-2 rounded-pill text-center">
+                        <option value="all">all</option>
+                        <option value="animal">animal</option>
+                        <option value="vegetable">vegetable</option>
+                        <option value="user">user</option>
+                        </select>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </header>
     
     <main>
+        <div class="conatiner-fluid">
+            <div id="contenitore" class="row justify-content-around align-items-center text-center">
 
+            </div>
+        </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-  </body>
+  
+    <script src="main.js"></script>
+</body>
 </html>
